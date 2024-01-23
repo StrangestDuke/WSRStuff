@@ -1,17 +1,14 @@
+import pandas as pd
+import yaml
+
+irisdf = pd.read_csv('files to parse/apple_quality.csv')
+
+irisdf = irisdf.loc[(irisdf.Quality == "good") & (irisdf.Sweetness >= 5.0)]
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-# pebsi
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-    print("Boobs")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(irisdf)
+with open('anaconda-project.yml', 'w') as file:
+    documents = yaml.dump(irisdf.to_dict(orient="records"), file, default_flow_style=False)
