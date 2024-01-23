@@ -1,0 +1,122 @@
+[
+  {
+    "A_id": 0.0,
+    "Size": -3.970048523,
+    "Weight": -2.512336381,
+    "Sweetness": 5.346329613,
+    "Crunchiness": -1.012008712,
+    "Juiciness": 1.844900361,
+    "Ripeness": 0.329839797,
+    "Acidity": "-0.491590483",
+    "Quality": "good",
+    "Total": 0.026676155000000534
+  },
+  {
+    "A_id": 336.0,
+    "Size": -3.077603673,
+    "Weight": -3.069404205,
+    "Sweetness": 5.094382126,
+    "Crunchiness": 2.112990558,
+    "Juiciness": 2.133635175,
+    "Ripeness": -1.193377992,
+    "Acidity": "-1.956538847",
+    "Quality": "good",
+    "Total": 2.0006219889999994
+  },
+  {
+    "A_id": 1212.0,
+    "Size": -1.973276897,
+    "Weight": -3.830499332,
+    "Sweetness": 5.612644416,
+    "Crunchiness": 2.101756234,
+    "Juiciness": 2.53470734,
+    "Ripeness": 0.223946461,
+    "Acidity": "1.643451555",
+    "Quality": "good",
+    "Total": 4.669278222000001
+  },
+  {
+    "A_id": 1749.0,
+    "Size": -2.065320261,
+    "Weight": -3.222701167,
+    "Sweetness": 5.54296888,
+    "Crunchiness": 1.82945098,
+    "Juiciness": 1.571516982,
+    "Ripeness": -0.145645501,
+    "Acidity": "-0.135212578",
+    "Quality": "good",
+    "Total": 3.510269913
+  },
+  {
+    "A_id": 1919.0,
+    "Size": -0.694597469,
+    "Weight": -5.343076463,
+    "Sweetness": 5.8623561,
+    "Crunchiness": 1.162238433,
+    "Juiciness": 2.294458014,
+    "Ripeness": 1.640538073,
+    "Acidity": "0.896418974",
+    "Quality": "good",
+    "Total": 4.9219166880000005
+  },
+  {
+    "A_id": 2303.0,
+    "Size": -3.08237622,
+    "Weight": -3.36791588,
+    "Sweetness": 5.069020326,
+    "Crunchiness": -1.427145063,
+    "Juiciness": -0.116889567,
+    "Ripeness": 1.061304956,
+    "Acidity": "-1.718581873",
+    "Quality": "good",
+    "Total": -1.8640014480000002
+  },
+  {
+    "A_id": 2691.0,
+    "Size": -4.122995743,
+    "Weight": -4.098127683,
+    "Sweetness": 6.374915513,
+    "Crunchiness": 0.467545479,
+    "Juiciness": 2.835062913,
+    "Ripeness": -0.33644327,
+    "Acidity": "-1.244418116",
+    "Quality": "good",
+    "Total": 1.119957208999999
+  },
+  {
+    "A_id": 2824.0,
+    "Size": -0.740123171,
+    "Weight": -3.437991017,
+    "Sweetness": 5.079820147,
+    "Crunchiness": 1.375173807,
+    "Juiciness": 2.612484532,
+    "Ripeness": -0.454033638,
+    "Acidity": "-2.678681961",
+    "Quality": "good",
+    "Total": 4.43533066
+  },
+  {
+    "A_id": 2908.0,
+    "Size": -2.06053441,
+    "Weight": -4.255527986,
+    "Sweetness": 5.669086632,
+    "Crunchiness": 0.970850075,
+    "Juiciness": 0.330087838,
+    "Ripeness": 1.532844721,
+    "Acidity": "-0.13201002",
+    "Quality": "good",
+    "Total": 2.18680687
+  },
+  {
+    "A_id": 3244.0,
+    "Size": -2.042188947,
+    "Weight": -3.259705692,
+    "Sweetness": 5.019020042,
+    "Crunchiness": -1.807715157,
+    "Juiciness": 0.705932295,
+    "Ripeness": 1.798553071,
+    "Acidity": "-1.88350261",
+    "Quality": "good",
+    "Total": 0.4138956119999997
+  }
+]
