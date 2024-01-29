@@ -5,6 +5,7 @@ import sys
 import numpy as np
 from matplotlib import pyplot as plt
 import matplotlib.cm as cm
+import seaborn as sns
 
 #Geting chuncks of code
 np.set_printoptions(threshold=4000)
@@ -30,8 +31,7 @@ for number_of_acidity in irisdfgood.Acidity:
     acidity_in_list.append(float(number_of_acidity))
     i += 1
 #irisdf_good_n_clean = irisdf.loc[irisdf["Acidity"], ["Acidity"]] = acidity_in_list
-irisdf_good_n_clean = irisdf.drop(["Acidity","Quality"], axis=1)
-
+irisdf_clean = irisdf.drop(["Acidity","Quality"], axis=1)
 #Setting up colors
 xs = np.arange(10)
 ys = [i+xs+(i*xs)**2 for i in range(10)]
@@ -39,34 +39,40 @@ colors = iter(cm.rainbow(np.linspace(0, 1, len(ys))))
 
 #Taking columns out the file
 columns = pd.DataFrame(columns=pd.read_csv('files to parse/apple_quality1.csv').columns)
-del columns["Acidity"], columns["Quality"]
+del columns["Acidity"], columns["Quality"], columns['A_id']
 
+print(irisdf_clean.describe())
 
 with open('anaconda-project.json', 'w') as file:
-    documents = json.dump(irisdf_good_n_clean.to_dict(orient="records"), file, indent=2)
+    documents = json.dump(irisdf_clean.to_dict(orient="records"), file, indent=2)
 #А ведь я могу попробовать на графике запустить bad apple
 #Making graphic
-y = []
-x = []
-for number in irisdf_good_n_clean.Sweetness:
-    y.append(float(number))
 
-for column in columns:
-    if column != "A_id":
-        for number in irisdf_good_n_clean[column]:
-            x.append((float(number)*333.3))
-    else:
-        for number in irisdf_good_n_clean[column]:
-            x.append(float(0))
-    color_that_we_are_using = next(colors)
-    plt.scatter(x, y, s=2,color=color_that_we_are_using, label = str(column))
-    z = np.polyfit(x,y,1)
-    p = np.poly1d(z)
-    y_mean=[(irisdf_good_n_clean[column].mean)]
-    plt.plot(x, p(x), s=3, color=color_that_we_are_using)
-    x.clear()
-plt.legend()
-plt.show()
+#Сладость почти равняется размеру(зависит)
+#Сладость от веса немного зависит
+#Чем больше хруст яблока, тем более оно сладкое, такая же штука с сочностью яблока и зрелостью
+
+for i,col in enumerate(['Size','Weight']):
+    plt.figure(i)
+    sns.catplot(x=col, y='Sweetness', data=irisdf_clean, aspect=2,)
+    plt.show()
+#for number in irisdf_good_n_clean.Sweetness:
+#    y.append(float(number))
+#for column in columns:
+#    plt.legend(str(column))
+#for column in columns:
+#    if column != "A_id":
+#        for number in irisdf_good_n_clean[column]:
+#            x.append((float(number)*333.3))
+#    else:
+#        for number in irisdf_good_n_clean[column]:
+#            x.append(float(0))
+#    color_that_we_are_using = next(colors)
+#    sns.histplot(x,color=color_that_we_are_using, kde=False, bins=np.arange(xmin, xmax,width))
+#
+#    x.clear()
+#plt.legend()
+#plt.show()
 
 #Doing total of all numbers
 irisdf["Total"] = irisdf["Sweetness"] + irisdf["Juiciness"] + irisdf["Ripeness"]\
