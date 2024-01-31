@@ -1,11 +1,13 @@
+
 import pandas as pd
-import yaml
 import json
 import sys
 import numpy as np
 from matplotlib import pyplot as plt
 import matplotlib.cm as cm
 import seaborn as sns
+import spacy
+from spacypdfreader.spacypdfreader import pdf_reader
 
 #Geting chuncks of code
 np.set_printoptions(threshold=4000)
@@ -52,10 +54,12 @@ with open('anaconda-project.json', 'w') as file:
 #Сладость от веса немного зависит
 #Чем больше хруст яблока, тем более оно сладкое, такая же штука с сочностью яблока и зрелостью
 
-for i,col in enumerate(['Size','Weight']):
-    plt.figure(i)
-    sns.catplot(x=col, y='Sweetness', data=irisdf_clean, aspect=2,)
-    plt.show()
+#Расчет этой хуйни займёт очень огромное время.
+
+#В юпитерском ноутбуке, можно смачно взять граф. Через мат либ ебануть простенький
+#граф и через скатер надристать точками с маркером "dick" на японском
+
+
 #for number in irisdf_good_n_clean.Sweetness:
 #    y.append(float(number))
 #for column in columns:
