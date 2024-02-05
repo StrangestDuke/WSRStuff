@@ -59,7 +59,23 @@ with open('anaconda-project.json', 'w') as file:
 #В юпитерском ноутбуке, можно смачно взять граф. Через мат либ ебануть простенький
 #граф и через скатер надристать точками с маркером "dick" на японском
 
+sweetness =list(irisdf_clean['Sweetness'])
+size = list(irisdf_clean['Size'])
+weight =list(irisdf_clean['Weight'])
+crunchiness =list(irisdf_clean['Crunchiness'])
+juiciness =list(irisdf_clean['Juiciness'])
+ripeness =list(irisdf_clean['Ripeness'])
+xmin = min(min(size),min(weight),min(sweetness),min(crunchiness),min(juiciness),min(ripeness))
+xmax = max(max(size),max(weight),max(sweetness),max(crunchiness),max(juiciness),max(ripeness))
+width = (xmax - xmin) / 40
 
+for i in ['Size','Weight','Crunchiness','Juiciness','Ripeness']:
+
+    sns.histplot(sweetness, color='r', kde=False, bins=np.arange(xmin, xmax, width))
+    sns.histplot(irisdf_clean[i], color = 'g', kde = False, bins=np.arange(xmin, xmax, width))
+    plt.legend(['Sweetness', '{}'.format(i)])
+    plt.title('Overlaid histogram for {}'.format(i))
+    plt.show()
 #for number in irisdf_good_n_clean.Sweetness:
 #    y.append(float(number))
 #for column in columns:
